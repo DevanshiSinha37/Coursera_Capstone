@@ -1,4 +1,4 @@
-from CreateGraph import *
+from CreateGraph import createmygraph
 import copy
 
 
@@ -8,6 +8,8 @@ def graph_creation():
     return graph
 
 #####--------------Define Graph Output-----------------#####
+
+
 class RG_graph:
     def __init__(self):
         self.vertices = []
@@ -38,7 +40,8 @@ def print_graph(graph):
     print('Vertices:', graph.vertices)
     print('Arcs:', graph.arcs)
     for arc in graph.arcs:
-            print(arc[0], "->", arc[1], " arc cost:", arc[2], " arc capacity:", arc[3])
+        print(arc[0], "->", arc[1], " arc cost:",
+              arc[2], " arc capacity:", arc[3])
 
 
 ######--------------Take input from user-----------------#####
@@ -47,7 +50,7 @@ def run_file():
     V = mygraph.vertices
     A = mygraph.arcs
     RG_Graph_ans = Residual_Graph(V, A)
-    #print_graph(RG_Graph_ans)
+    # print_graph(RG_Graph_ans)
     return RG_Graph_ans
 
-#run_file()
+# run_file()

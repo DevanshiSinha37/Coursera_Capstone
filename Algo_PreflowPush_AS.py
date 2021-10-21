@@ -1,4 +1,4 @@
-from CreateGraph import *
+from CreateGraph import createmygraph
 from Algo_ResidualGraph import Residual_Graph
 from Algo_FoldFulkerson import retrive_flow
 import math
@@ -110,12 +110,14 @@ def algo_preflowpush(nodes, arcs, start, end):
             arc[3] = 0
 
     while len(active) != 0:
-        admissible_arcs = find_admissiblearcs(residual.vertices, residual.arcs, distance)
+        admissible_arcs = find_admissiblearcs(
+            residual.vertices, residual.arcs, distance)
         push = False
         print('')
         for arc in admissible_arcs:
             if arc[0] in active:
-                push_flow(residual.vertices, residual.arcs, active, excess, start, end, arc, arc[0])
+                push_flow(residual.vertices, residual.arcs,
+                          active, excess, start, end, arc, arc[0])
                 push = True
 
         if not push:
